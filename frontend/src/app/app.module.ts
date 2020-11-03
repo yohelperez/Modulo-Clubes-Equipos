@@ -12,13 +12,17 @@ import { AppComponent } from './app.component';
 import { ClubequipoConsultaComponent } from './components/clubequipo-consulta/clubequipo-consulta.component';
 import { RegistroClubComponent } from './components/registro-club/registro-club.component';
 import { RegistroEquipoComponent } from './components/registro-equipo/registro-equipo.component';
+import { EditarEquipoComponent } from './components/editar-equipo/editar-equipo.component';
+import { EditarClubComponent } from './components/editar-club/editar-club.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClubequipoConsultaComponent,
     RegistroClubComponent,
-    RegistroEquipoComponent
+    RegistroEquipoComponent,
+    EditarEquipoComponent,
+    EditarClubComponent
   ],
   imports: [
     HttpClientModule,

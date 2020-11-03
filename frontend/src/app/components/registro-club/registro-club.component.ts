@@ -30,7 +30,7 @@ export class RegistroClubComponent implements OnInit {
   ,"..."];
 
   emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  telPattern: any=/^(?=.*?[0-9]).*$/;
+  telPattern: any=/^(?=.*?[0-9])|(([a-zA-Z\-0-9]+\.)).*$/;
   identiPattern: any=/^(?=.*?[0-9]).*$/;
   createFormGroup(){
     return new FormGroup({
@@ -38,6 +38,7 @@ export class RegistroClubComponent implements OnInit {
       name: new FormControl('',[Validators.required, Validators.minLength(3)]),
       identificacion: new FormControl('',[Validators.required, Validators.minLength(6),Validators.pattern(this.identiPattern)]),
       municipio: new FormControl('',[Validators.required, ]),
+      logo: new FormControl('',[Validators.required, ]),
 
     });
   }
@@ -66,16 +67,18 @@ export class RegistroClubComponent implements OnInit {
           });
     }} else {
       console.log('no valido')
-      if(form.value.name == "" && form.value.municipio == "" && form.value.identificacion == "" && form.value.telefono == ""){
+      if(form.value.name == "" && form.value.municipio == "" && form.value.telefono == "" && form.value.identificacion == "" && form.value.telefono == ""){
         M.toast({html: 'Debe llenar todos los campos'});
       }else if (form.value.name == "") {
         M.toast({html: 'Debe llenar el nombre'});
       } else if (form.value.municipio == "" ) {
-        M.toast({html: 'Debes llenar el municipio'});
+        M.toast({html: 'Debe seleccionar un municipio'});
       } else if (form.value.identificacion == "") {
-        M.toast({html: 'Debes llenar el campo identificacio'});
+        M.toast({html: 'Debe llenar el campo identificacio'});
       } else if (form.value.telefono == "") {
-        M.toast({html: 'Debes llenar el campo  telefono'});
+        M.toast({html: 'Debe llenar el campo  telefono'});
+      }else if (form.value.logo == "") {
+        M.toast({html: 'Debe seleccionar una imagen'});
       } else {
         this.clubservice.postClub(form.value)
           .subscribe(res => {
@@ -92,6 +95,7 @@ export class RegistroClubComponent implements OnInit {
   get identificacion(){return this.registroForm.get('identificacion')};
   get municipio(){return this.registroForm.get('municipio')};
   get telefono(){return this.registroForm.get('telefono')};
+  get logo(){return this.registroForm.get('logo')};
 
 
   

@@ -1,37 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Club } from '../models/club';
+import { Equipo } from '../models/equipo';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClubService {
+export class EquipoService {
 
  
-  selectedClub: Club;
-  clubes: Club[];
+  selectedEquipo: Equipo;
+  equipos: Equipo[];
   
   readonly URL_API = 'http://localhost:3000/api';
 
 
   constructor(private http: HttpClient) {
-    this.selectedClub = new Club();
+    this.selectedEquipo = new Equipo();
   }
 
 
-  postClub(club: Club) {
-    return this.http.post(this.URL_API, club);
+  postEquipo(equipo: Equipo) {
+    return this.http.post(this.URL_API, equipo);
   }
 
-  getClub() {
+  getEquipo() {
     return this.http.get(this.URL_API);
   }
 
-  putClub(club: Club) {
-    return this.http.put(this.URL_API + `/${club._id}`, club);
+  putEquipo(equipo: Equipo) {
+    return this.http.put(this.URL_API + `/${equipo._id}`, equipo);
   }
 
-  deleteClub(_id: string) {
+  deleteEquipo(_id: string) {
     return this.http.delete(this.URL_API + `/${_id}`);
   }
 
