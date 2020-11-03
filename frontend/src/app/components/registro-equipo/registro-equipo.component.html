@@ -1,0 +1,89 @@
+<br><br>
+<form #equipoForm="ngForm" [formGroup]="registroEquiForm" (ngSubmit)="addequipo(equipoForm)" class="form-labels-on-top">
+
+    <div class="form-title-row">
+        <h1>Resgistro Equipo</h1>
+    </div>
+
+    <div class="form-row">
+        <label>
+            <span>Identificacion</span>
+            <input type="text" name="identificacion" formControlName="identificacion" autocomplete="off" placeholder="identificacion">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label>
+            <span>Jugadores</span>
+        </label>
+    </div>   
+
+    <div class="form-row">
+        <label>
+            <span>Categoria</span>
+            <select name="dropdown">
+                <option>sub 12</option>
+                <option>sub 14</option>
+                <option>sub 16</option>
+                <option>sub 18</option>
+                <option>sub 21</option>
+                <option>Equipo mayores</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label>
+            <span>Entrenador</span>
+        </label>
+    </div> 
+    
+    <div class="form-row">
+        <label><span>Genero</span></label>
+        <div class="form-radio-buttons">
+
+            <div>
+                <label>
+                    <input type="radio" name="radio">
+                    <span>Femenino</span>
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    <input type="radio" name="radio">
+                    <span>Masculino</span>
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    <input type="radio" name="radio">
+                    <span>Otro</span>
+                </label>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <label>
+                <span>Asistente</span>
+            </label>
+        </div> 
+
+        <div class="form-row">
+            <label>
+                <span>Estadistica</span>
+            </label>
+        </div> 
+    </div>
+
+
+
+
+    <div class="form-row">
+        <input type="submit" name="crear" value="Registrar equipo" id="sub">              
+        <input type="button" name="borrar" (click)="resetForm(clubForm)" value="borrar">  
+    </div>
+
+</form>
