@@ -20,7 +20,7 @@ app.use(express.json()); //ayuda a entender el codigo que viene en formato json
 
 //Routes
 //app.use(require('./routes/app.routes'));
-app.use('/api/clubes-equipos', require('./routes/app.routes'));
+app.use('/api', require('./routes/app.routes'));
 
 //Starting the server
 app.listen(app.get('port'), ()=>{

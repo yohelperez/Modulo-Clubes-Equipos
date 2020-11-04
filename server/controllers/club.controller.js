@@ -15,7 +15,7 @@ clubController.getClubs = async (req, res)=>{
 clubController.createClub= async(req, res) =>{
     const club =  new Club(req.body);   //crea nuevo objeto con los datos enviados por el navegador
     //console.log(club);
-    //await club.save();    //guarda el nuevo club en la base de datos
+    await club.save();    //guarda el nuevo club en la base de datos
     res.json({
         'status': 'Club Saved'
     });

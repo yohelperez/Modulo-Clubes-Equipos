@@ -6,8 +6,8 @@ const EquipoSchema= new Schema({
     id: {type: String, required: true},
     jugadores: {type: Array, required: false},
     categoria: {type: String, required: true},
-    entrenador: {type: Object, required: true},
-    asistente: {type: Object, required: true},
+    entrenador: {type: {}},
+    asistente: {type: {}},
     genero: {type: String, required: true},
     estadisticas: {type: Array, required: true}
     
