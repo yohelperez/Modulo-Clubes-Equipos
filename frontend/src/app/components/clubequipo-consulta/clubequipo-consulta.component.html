@@ -1,39 +1,27 @@
-<div class="container">
+
 
 <br><br>
 
-<div class="row">
-        <div class="col s3">
-            <button class="button button1" (click)="cambiaBusquedaEqui()" id="btnequipo">equipos</button>
-        </div>
 
+<form class="form-labels-on-top">
 
-        <div class="col s7">
-            <div class="row">
-                <div class="col s8">
-                    <input type="text" class="buscar_texto" autocomplete="off" placeholder="busca equipos" id="busqueda" >
-                </div>
-                <div class="col s1">
-                    <button class="button button2">
-                        <i class="tiny material-icons">search</i>
-                    </button>
-                </div>
-                <div class="col s2">
-                 <button class="button button2" (click) = "redireccionClub()">
-                     <i class="tiny material-icons">add</i>
-                 </button>
-                </div>
-            </div>
-           
-            
-
-        </div>
-        
+    <div class="form-title-row">
+        <form class="form-search" name="clubequipobusqueda" >
+            <input type="text" autocomplete="off" placeholder="busca equipos" id="busqueda">
+            <button type="submit" (click)="buscar()">Search</button>
+            <i class="fa fa-search"></i>
+        </form>
     </div>
 
-    <div class="row">
-        <div class="col s5">
-            <button class="button button1" (click)="cambiaBusquedaClub()" >clubs</button>
-        </div>
+    <div class="form-row">
+        <label id="buttons"> 
+         <button  (click)="cambiaBusquedaEqui()" id="btnequipo">equipos</button>  
+        <button (click)="cambiaBusquedaClub()" >clubs</button>
+        <button  (click) = "redireccionRegistro()"><i class="fa fa-plus"></i></button>
+        </label>
     </div>
-</div>
+
+
+</form>
+
+

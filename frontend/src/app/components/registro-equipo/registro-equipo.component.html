@@ -14,14 +14,22 @@
 
     <div class="form-row">
         <label>
+            <span>Nombre</span>
+            <input type="text" name="name" formControlName="name" autocomplete="off" placeholder="nombre equipo">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label>
             <span>Jugadores</span>
+            <input type="text"  formControlName="jugadores" placeholder="jugadores" disabled>
         </label>
     </div>   
 
     <div class="form-row">
         <label>
             <span>Categoria</span>
-            <select name="dropdown">
+            <select name="dropdown" formControlName="categoria">
                 <option>sub 12</option>
                 <option>sub 14</option>
                 <option>sub 16</option>
@@ -35,30 +43,31 @@
     <div class="form-row">
         <label>
             <span>Entrenador</span>
+            <input type="text "  formControlName="entrenador" placeholder="entrenador" disabled>
         </label>
     </div> 
     
     <div class="form-row">
         <label><span>Genero</span></label>
-        <div class="form-radio-buttons">
+        <div class="form-radio-buttons" >
 
             <div>
                 <label>
-                    <input type="radio" name="radio">
+                    <input type="radio" name="genero" formControlName="genero">
                     <span>Femenino</span>
                 </label>
             </div>
 
             <div>
                 <label>
-                    <input type="radio" name="radio">
+                    <input type="radio" name="genero">
                     <span>Masculino</span>
                 </label>
             </div>
 
             <div>
                 <label>
-                    <input type="radio" name="radio">
+                    <input type="radio" name="genero">
                     <span>Otro</span>
                 </label>
             </div>
@@ -68,12 +77,14 @@
         <div class="form-row">
             <label>
                 <span>Asistente</span>
+                <input type="text "  formControlName="asistente" placeholder="asistente" disabled>
             </label>
         </div> 
 
         <div class="form-row">
             <label>
                 <span>Estadistica</span>
+                <input type="text "  formControlName="estadistica" placeholder="estadistica" disabled>
             </label>
         </div> 
     </div>
@@ -83,7 +94,7 @@
 
     <div class="form-row">
         <input type="submit" name="crear" value="Registrar equipo" id="sub">              
-        <input type="button" name="borrar" (click)="resetForm(clubForm)" value="borrar">  
+        <input type="button" name="borrar" (click)="resetForm(equipoForm)" value="borrar">  
     </div>
 
 </form>

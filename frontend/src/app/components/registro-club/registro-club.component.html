@@ -15,7 +15,7 @@
                             la identifiacion es requerida                    
                         </div>                    
                         <div class="container-error-message" *ngIf="identificacion.errors.minlength && identificacion.invalid &&  identificacion.errors.pattern">
-                            la identificacion debe tener minimo 2 caracteres                   
+                            la identificacion debe tener letras y numero                   
                         </div>                
                     </div>  
         </label>
@@ -55,8 +55,8 @@
     <div class="form-row">
         <label>
             <span>Municipio</span>
-            <select name="dropdown">
-                <option>Option One</option>
+            <select name="dropdown" name="municipio" formControlName="municipio">
+                <option  value="seleccioneMunicipio">seleccione municipio</option>
                 <option>Option Two</option>
                 <option>Option Three</option>
                 <option>Option Four</option>
@@ -67,7 +67,7 @@
     <div class="form-row">
         <label>
             <span>logo</span>
-            <input type="file">
+            <input type="file" name="logo" formControlName="logo">
         </label>
     </div>
 
@@ -78,61 +78,3 @@
     </div>
 
 </form>
-<!--
-<div class="container" data-spy="scroll" data-target="#header" data-offset="0">  
-    <div class="row">    
-        <div class="col-md-4  registroBox"> 
-             <div >  
-                <h1>Registro CLub</h1>
-                <form #clubForm="ngForm" [formGroup]="registroForm" (ngSubmit)="addClub(clubForm)" >
-                    <input type="hidden" name="_id"> 
-
-                    <p>Identificacion Club</p> 
-                    <input type="text" name="identificacion" formControlName="identificacion" autocomplete="off" placeholder="identificacion">
-                    <div class="alert-danger" *ngIf="identificacion.invalid && identificacion.touched">
-                        <div class="container-error-message" *ngIf="identificacion.errors.required">
-                            la identifiacion es requerida                    
-                        </div>                    
-                        <div class="container-error-message" *ngIf="identificacion.errors.minlength && identificacion.invalid &&  identificacion.errors.pattern">
-                            la identificacion debe tener minimo 2 caracteres                   
-                        </div>                
-                    </div>   
-                                          
-                    <p>Nombre</p>        
-                    <input type="text" name="name" formControlName="name" autocomplete="off" placeholder="Nombre">                
-                    <div class="alert-danger" *ngIf="name.invalid && name.touched">                    
-                        <div class="container-error-message" *ngIf="name.errors.required">                 
-                        </div>      
-                        <div class="container-error-message" *ngIf="name.errors.minlength">  
-                            el nombre debe tener minimo 3 caracteres                   
-                        </div>                
-                    </div>
-
-                    <p>Municipio</p>               
-                    <div>
-                        <select name="municipio" formControlName="municipio" >
-                            <option [ngValue]="null" disabled >selecione municipio</option>
-                            <option *ngFor= "let municipio of municipios" [ngValue]="municipio">{{municipio}}</option>
-                        </select> 
-                    </div>        
-                                   
-                    <p>Telefono</p>               
-                    <input type="text" name="telefono" formControlName="telefono" autocomplete="off" placeholder="4444444">               
-                    <div class="alert-danger" *ngIf="telefono.invalid && telefono.touched">        
-                        <div class="container-error-message" *ngIf="telefono.errors.required">    
-                            el telefono es requerido                 
-                        </div>                   
-                        <div class="container-error-message" *ngIf="telefono.touched && telefono.invalid &&  telefono.errors.pattern">                   
-                             el telefono debe tener un fomato solo numerico                  
-                        </div>               
-                    </div>  
-                    
-                     <p>Logo</p> <input type="file">  
-                                                                                  
-                    <input type="submit" name="crear" value="Registrar cuenta">              
-                    <input type="button" name="borrar" (click)="resetForm(clubForm)" value="borrar">    
-                </form>           
-            </div>          
-        </div>     
-    </div>    
-</div>-->
